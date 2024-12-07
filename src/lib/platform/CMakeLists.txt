@@ -46,4 +46,9 @@ endif()
 if (APPLE)
     find_library(COCOA_LIBRARY Cocoa)
     target_link_libraries(platform ${COCOA_LIBRARY})
+    target_compile_options(platform PRIVATE
+        $<$<COMPILE_LANGUAGE:C>:-fobjc-exceptions>
+        $<$<COMPILE_LANGUAGE:C>:-xobjective-c>
+        $<$<COMPILE_LANGUAGE:CXX>:-fobjc-exceptions>
+    )
 endif()
