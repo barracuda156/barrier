@@ -18,7 +18,9 @@
 
 #pragma once
 
+#ifdef __cpluplus
 #include <cstdint>
+#endif
 
 //
 // make typedefs
